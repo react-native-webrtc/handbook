@@ -23,7 +23,9 @@ const config = {
 			(
 				{
 					docs: {
-						sidebarPath: require.resolve( './sidebars.js' )
+						sidebarPath: require.resolve( './sidebars.js' ),
+						editUrl: 'https://github.com/react-native-webrtc/handbook/edit/master/',
+						path: 'docs'
 					},
 					theme: {
 						customCss: require.resolve( './src/css/custom.css' )
@@ -34,6 +36,11 @@ const config = {
 	],
 	themeConfig: (
 		{
+			algolia: {
+				appId: '1234567890',
+				apiKey: '1234567890',
+				indexName: 'react-native-webrtc'
+			},
 			navbar: {
 				title: 'React Native WebRTC',
 				logo: {
@@ -44,7 +51,12 @@ const config = {
 					{
 						label: 'Docs',
 						type: 'doc',
-						docId: 'intro',
+						docId: 'getting-started',
+						position: 'left'
+					},
+					{
+						label: 'Examples',
+						href: 'https://github.com/react-native-webrtc/examples',
 						position: 'left'
 					},
 					{
@@ -53,9 +65,24 @@ const config = {
 						position: 'left'
 					},
 					{
-						label: 'GitHub',
+						label: 'Other Modules',
+						position: 'right',
+						items: [
+							{
+								label: 'Call Keep',
+								href: 'https://github.com/react-native-webrtc/react-native-callkeep'
+							},
+							{
+								label: 'inCall Manager',
+								href: 'https://github.com/react-native-webrtc/react-native-incall-manager'
+							}
+						]
+					},
+					{
 						href: 'https://github.com/react-native-webrtc/react-native-webrtc',
-						position: 'right'
+						position: 'right',
+						className: 'header-github-link',
+						'aria-label': 'GitHub repository'
 					}
 				]
 			},
@@ -66,8 +93,28 @@ const config = {
 						title: 'Docs',
 						items: [
 							{
-								label: 'Introduction',
-								to: '/docs/intro'
+								label: 'Getting Started',
+								to: '/docs/getting-started'
+							},
+							{
+								label: 'Installation',
+								to: '/docs/installation/intro'
+							},
+							{
+								label: 'User Guide',
+								to: '/docs/user-guide/intro'
+							},
+							{
+								label: 'Developer Guide',
+								to: '/docs/developer-guide/intro'
+							},
+							{
+								label: 'Other Modules',
+								to: '/docs/other-modules/intro'
+							},
+							{
+								label: 'FAQs',
+								to: '/docs/faqs'
 							}
 						]
 					},
@@ -77,6 +124,19 @@ const config = {
 							{
 								label: 'Forum',
 								href: 'https://react-native-webrtc.discourse.group'
+							}
+						]
+					},
+					{
+						title: 'Other Modules',
+						items: [
+							{
+								label: 'Call Keep',
+								href: 'https://github.com/react-native-webrtc/react-native-callkeep'
+							},
+							{
+								label: 'inCall Manager',
+								href: 'https://github.com/react-native-webrtc/react-native-incall-manager'
 							}
 						]
 					},

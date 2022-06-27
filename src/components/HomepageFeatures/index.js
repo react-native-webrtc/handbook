@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
 	{
 		title: 'Simply Modern',
-		Svg: require( '@site/static/img/undraw_meditation_re_gll0.svg' ).default,
+		Svg: require( '@site/static/img/undraw_real_time_sync_re_nky7.svg' ).default,
 		description: (
 			<>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -14,7 +14,7 @@ const FeatureList = [
 	},
 	{
 		title: 'Multiple Platform Support',
-		Svg: require( '@site/static/img/undraw_in_sync_re_jlqd.svg' ).default,
+		Svg: require( '@site/static/img/undraw_real_time_sync_re_nky7.svg' ).default,
 		description: (
 			<>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -23,7 +23,7 @@ const FeatureList = [
 	},
 	{
 		title: 'Stable and Standardized',
-		Svg: require( '@site/static/img/undraw_add_tasks_re_s5yj.svg' ).default,
+		Svg: require( '@site/static/img/undraw_real_time_sync_re_nky7.svg' ).default,
 		description: (
 			<>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
