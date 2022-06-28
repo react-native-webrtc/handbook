@@ -2,6 +2,11 @@ const sidebars = {
 	docs: [
 		{
 			type: 'doc',
+			label: 'Introduction',
+			id: 'intro'
+		},
+		{
+			type: 'doc',
 			label: 'Getting Started',
 			id: 'getting-started'
 		},
@@ -9,8 +14,10 @@ const sidebars = {
 			type: 'category',
 			label: 'Installation',
 			link: {
-				type: 'doc',
-				id: 'installation/intro'
+				type: 'generated-index',
+				title: 'Installation',
+			//	description: 'derp',
+				slug: '/category/installation'
 			},
 			items: [
 				'installation/android',
@@ -25,8 +32,10 @@ const sidebars = {
 			type: 'category',
 			label: 'User Guide',
 			link: {
-				type: 'doc',
-				id: 'user-guide/intro'
+				type: 'generated-index',
+				title: 'User Guide',
+			//	description: 'herp',
+				slug: '/category/user-guide'
 			},
 			items: [
 				'user-guide/basic-usage',
@@ -38,8 +47,10 @@ const sidebars = {
 			type: 'category',
 			label: 'Developer Guide',
 			link: {
-				type: 'doc',
-				id: 'developer-guide/intro'
+				type: 'generated-index',
+				title: 'Developer Guide',
+			//	description: 'derp',
+				slug: '/category/developer-guide'
 			},
 			items: [
 				'developer-guide/building',
@@ -50,8 +61,10 @@ const sidebars = {
 			type: 'category',
 			label: 'Other Modules',
 			link: {
-				type: 'doc',
-				id: 'other-modules/intro'
+				type: 'generated-index',
+				title: 'Other Modules',
+			//	description: 'herp',
+				slug: '/category/other-modules'
 			},
 			items: [
 				'other-modules/call-keep',

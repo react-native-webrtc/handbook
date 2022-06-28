@@ -51,7 +51,7 @@ const config = {
 					{
 						label: 'Docs',
 						type: 'doc',
-						docId: 'getting-started',
+						docId: 'intro',
 						position: 'left'
 					},
 					{
@@ -93,24 +93,28 @@ const config = {
 						title: 'Docs',
 						items: [
 							{
+								label: 'Introduction',
+								to: '/docs/intro'
+							},
+							{
 								label: 'Getting Started',
 								to: '/docs/getting-started'
 							},
 							{
 								label: 'Installation',
-								to: '/docs/installation/intro'
+								to: '/docs/category/installation'
 							},
 							{
 								label: 'User Guide',
-								to: '/docs/user-guide/intro'
+								to: '/docs/category/user-guide'
 							},
 							{
 								label: 'Developer Guide',
-								to: '/docs/developer-guide/intro'
+								to: '/docs/category/developer-guide'
 							},
 							{
 								label: 'Other Modules',
-								to: '/docs/other-modules/intro'
+								to: '/docs/category/other-modules'
 							},
 							{
 								label: 'FAQs',
@@ -150,7 +154,7 @@ const config = {
 						]
 					}
 				],
-			//	copyright: `Copyright © ${new Date().getFullYear()} React Native WebRTC - Built with Docusaurus.`
+				copyright: `Copyright © ${new Date().getFullYear()} React Native WebRTC - Built with <a href="https://docusaurus.io/">Docusaurus</a>.`
 			},
 			prism: {
 				theme: lightCodeTheme,
