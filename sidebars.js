@@ -16,7 +16,6 @@ const sidebars = {
 			link: {
 				type: 'generated-index',
 				title: 'Installation',
-			//	description: 'derp',
 				slug: '/category/installation'
 			},
 			items: [
@@ -34,7 +33,6 @@ const sidebars = {
 			link: {
 				type: 'generated-index',
 				title: 'User Guide',
-			//	description: 'herp',
 				slug: '/category/user-guide'
 			},
 			items: [
@@ -49,7 +47,6 @@ const sidebars = {
 			link: {
 				type: 'generated-index',
 				title: 'Developer Guide',
-			//	description: 'derp',
 				slug: '/category/developer-guide'
 			},
 			items: [
@@ -63,7 +60,6 @@ const sidebars = {
 			link: {
 				type: 'generated-index',
 				title: 'Other Modules',
-			//	description: 'herp',
 				slug: '/category/other-modules'
 			},
 			items: [

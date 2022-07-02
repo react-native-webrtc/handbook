@@ -36,11 +36,13 @@ const config = {
 	],
 	themeConfig: (
 		{
+		/*
 			algolia: {
 				appId: '1234567890',
 				apiKey: '1234567890',
 				indexName: 'react-native-webrtc'
 			},
+		*/
 			navbar: {
 				title: 'React Native WebRTC',
 				logo: {

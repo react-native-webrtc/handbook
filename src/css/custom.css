@@ -44,9 +44,9 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 /*
-	The theme seems to set the --dark class on the footer wether you are in light or dark mode.
-	As a result the footer doesn't adhere to the themes light/dark theme colours.
-	Dirty fix without editing the actual theme or providing a custom footer.
+	The classic default theme seems to add the --dark class on the footer wether you are in light or dark mode.
+	As a result the footer doesn't adhere to the themes light/dark background colours.
+	Dirty fix without editing the actual theme package or providing a custom footer.
 */
 .footer--dark {
 	--ifm-footer-background-color: unset;
