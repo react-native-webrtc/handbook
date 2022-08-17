@@ -103,7 +103,7 @@ try {
 ## Getting a Media Stream using getDisplayMedia
 
 This will allow capturing the device screen, requests permission on execution.  
-Make sure to follow [these](/guides/extra-steps/android#screen-capture-support-android-10) extra steps for Android and [these](http://localhost:5173/handbook/guides/extra-steps/ios#screen-capture-support) for iOS.  
+Make sure to follow [these](/guides/extra-steps/android#screen-capture-support-android-10) extra steps for Android and [these](/guides/extra-steps/ios#screen-capture-support) for iOS.  
 Otherwise you'll experience blank streams.
 
 ```javascript
