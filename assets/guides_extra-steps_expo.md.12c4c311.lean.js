@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a as r}from"./app.a7105c62.js";const u=JSON.parse('{"title":"Expo 45+","description":"","frontmatter":{},"headers":[],"relativePath":"guides/extra-steps/expo.md"}'),o={name:"guides/extra-steps/expo.md"},n=r("",3),i=[n];function s(p,c,d,_,l,h){return a(),t("div",null,i)}const f=e(o,[["render",s]]);export{u as __pageData,f as default};
