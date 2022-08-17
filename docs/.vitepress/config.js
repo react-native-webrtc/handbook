@@ -3,6 +3,7 @@ export default {
 	title: 'React Native WebRTC',
 	description: '',
 	outDir: '../build',
+	base: '/handbook/',
 	cleanUrls: 'with-subfolders',
 	head: [
 		[
