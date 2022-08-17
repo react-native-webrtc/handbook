@@ -5,7 +5,6 @@
 /build
 
 # Generated files
-.vitepress
 .cache-loader
 .vscode
 
