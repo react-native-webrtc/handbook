@@ -4,7 +4,8 @@ Starting with React Native 0.60 due to a new auto linking feature you no longer 
 
 ## Declaring Permissions
 
-In `android/app/main/AndroidManifest.xml` add the following permissions before the `<application>` section.  
+In `android/app/main/AndroidManifest.xml` add the following permissions before the `<application>` section.
+That will define all of the permissions you might use.
 
 ```xml
 <uses-feature android:name="android.hardware.camera" />
@@ -53,7 +54,8 @@ In `android/app/proguard-rules.pro` add the following on a new line.
 You'll need [Notifee](https://notifee.app/react-native/docs/overview) or another library that can handle foreground services for you.  
 The basic requirement to get screen capturing working since Android 10 and above is to have a foreground service with `mediaProjection` included as a service type and to have that service running before starting a screen capture session.  
 
-In `android/app/main/AndroidManifest.xml` add the following inside the `<application>` section.  
+In `android/app/main/AndroidManifest.xml` add the following inside the `<application>` section.
+That will overwrite the foreground service with the correct types.
 
 ```xml
 <service
@@ -61,8 +63,9 @@ In `android/app/main/AndroidManifest.xml` add the following inside the `<applica
 	android:foregroundServiceType="mediaProjection|camera|microphone" />
 ```
 
-The following will create an ongoing persistent notification which also comes with a foreground service.  
-You will be prompted for permissions automatically each time you want to initialise screen capturing.  
+The following will create an ongoing persistent notification which also comes with a foreground service.
+You will be prompted for permissions automatically each time you want to start screen capturing.  
+  
 A notification channel is also required and created.  
 
 ```javascript
@@ -91,7 +94,8 @@ try {
 ```
 
 Once screen capturing has finished you should then stop the foreground service.  
-Usually you'd run a notification cancellation function but as the service is involved, instead run the following.  
+Usually you'd run a notification cancellation function but as there is a service involved.
+Instead you should run the following to get the job done.
 
 ```javascript
 try {
@@ -101,8 +105,8 @@ try {
 };
 ```
 
-Lastly you'll need to add this to your projects main `index.js` file.  
-Otherwise you'll receive errors relating to the foreground service not being registered correctly.  
+Lastly you need to add this to your projects main `index.js` file.  
+Otherwise you will receive an error relating to the service not being registered.
 
 ```javascript
 notifee.registerForegroundService( notification => {

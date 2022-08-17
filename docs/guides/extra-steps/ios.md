@@ -10,7 +10,7 @@ Otherwise you will experience problems.
 
 You may have to change the `platform` field in your podfile.  
 `react-native-webrtc` doesn't support iOS < 11  
-Set it to '11.0' or above or you'll get an error when running `pod install`.
+Set it to `11.0` or above otherwise you'll receive an error when running `pod install`.
 
 ```
 platform :ios, '11.0'
@@ -18,7 +18,7 @@ platform :ios, '11.0'
 
 ## Declaring Permissions
 
-Navigate to `<ProjectFolder>/ios/<ProjectName>/` and edit `Info.plist`, add the following lines.
+In `ios/<YourProjectName>/Info.plist` add the following.
 
 ```xml
 <key>NSCameraUsageDescription</key>

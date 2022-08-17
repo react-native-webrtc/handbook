@@ -1,7 +1,7 @@
 export default {
 	lang: 'en-GB',
 	title: 'React Native WebRTC',
-	description: '',
+	description: 'The WebRTC module for React Native',
 	outDir: '../build',
 	base: '/handbook/',
 	cleanUrls: 'with-subfolders',
@@ -17,7 +17,7 @@ export default {
 			'link',
 			{
 				rel: 'icon',
-				href: '/logo.svg',
+				href: '/handbook/logo.svg',
 				type: 'image/svg+xml'
 			}
 		],
@@ -25,7 +25,7 @@ export default {
 			'link',
 			{
 				rel: 'alternate icon',
-				href: '/favicon.png',
+				href: '/handbook/favicon.png',
 				type: 'image/png',
 				sizes: '16x16'
 			}
@@ -34,7 +34,7 @@ export default {
 			'link',
 			{
 				rel: 'mask-icon',
-				href: '/logo.svg',
+				href: '/handbook/logo.svg',
 				color: '#ffffff'
 			}
 		],

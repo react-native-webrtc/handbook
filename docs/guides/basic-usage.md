@@ -102,8 +102,9 @@ try {
 
 ## Getting a Media Stream using getDisplayMedia
 
-This will allow capturing the device screen, also requests permission on execution.  
-Android 10+ requires that a foreground service is running otherwise capturing won't work, follow [this solution](/guides/extra-steps/android#screen-capture-support-android-10).  
+This will allow capturing the device screen, requests permission on execution.  
+Make sure to follow [these](/guides/extra-steps/android#screen-capture-support-android-10) extra steps for Android and [these](http://localhost:5173/handbook/guides/extra-steps/ios#screen-capture-support) for iOS.  
+Otherwise you'll experience blank streams.
 
 ```javascript
 try {
@@ -130,8 +131,8 @@ localMediaStream = null;
 
 ## Defining Peer Constraints
 
-We're only specifying a STUN server but you should look at also using a TURN server.  
-If you want to improve call reliability then check [this guide](/guides/improving-call-reliability).  
+We're only specifying a STUN server but you should also be using a TURN server.  
+Check [this guide](/guides/improving-call-reliability) if you'd like some advice on how to improve call reliability.
 
 ```javascript
 let peerConstraints = {
@@ -145,8 +146,8 @@ let peerConstraints = {
 
 ## Creating a Peer Connection
 
-Here we're creating a peer connection required to get a call started.
-You can also hook up events by directly overwriting functions instead of using event listeners.  
+Here we're creating a peer connection required to create a call.  
+You can also overwrite hook functions instead of using event listeners.  
 
 ```javascript
 let peerConnection = new RTCPeerConnection( peerConstraints );
@@ -164,7 +165,7 @@ peerConnection.addEventListener( 'removestream', event => {} );
 ## Destroying the Peer Connection
 
 When ending a call you should always make sure to dispose of everything ready for another call.
-The following should dispose of everything related to the peer connection.  
+The following should dispose of everything.  
 
 ```javascript
 peerConnection._unregisterEvents();
@@ -175,7 +176,7 @@ peerConnection = null;
 ## Adding the Media Stream
 
 After using one of the media functions above you can then add the media stream to the peer.
-The negotiation needed event will be triggered on the peer connection afterwords.  
+The negotiation needed event will be triggered on the peer afterwords.  
 
 ```javascript
 peerConnection.addStream( localMediaStream );
@@ -219,9 +220,9 @@ datachannel.send( 'Hey There!' );
 
 ## Destroying the Data Channel
 
-When the peer connection is destroyed, data channels should also be destroyed automatically.  
+When the peer connection is destroyed everything attached should also be destroyed automatically including data channels.  
   
-But as good practice, you can always close them yourself.  
+But as good practice, you can always make sure they are closed.  
 
 ```javascript
 datachannel.close();
@@ -232,7 +233,7 @@ datachannel = null;
 
 As mentioned above we're going for the approach of offering both video and voice by default for good reasons.   
   
-This will allow you to enable and disable video streams while a call is active.  
+That will allow you to enable and disable video streams while a call is active.  
 
 ```javascript
 let sessionConstraints = {
@@ -246,7 +247,8 @@ let sessionConstraints = {
 
 ## Creating an Offer
 
-Executed by the call initialiser after media streams have been added to the peer connection.  
+Executed by the call initialiser after media streams have been added to the peer connection.
+Typically inside the `negotiationneeded` event.
   
 ICE Candidate creation and gathering will start as soon as an offer has been created.  
 
@@ -264,7 +266,7 @@ try {
 ## Creating an Answer
 
 All parties will need to ensure they are handling ICE Candidates correctly.  
-Otherwise the offer and answer handshake stage will go a little wonky.  
+Otherwise the offer and answer handshake stages will go a little wonky.  
 
 ```javascript
 try {
@@ -283,8 +285,9 @@ try {
 
 ## Toggle the Active Microphone
 
-During an active call you might want to mute your microphone.  
-Easy to accomplish by flipping the track enabled value to false, also possible on remote tracks.  
+During an active call you might want to mute your microphone.
+Easy to accomplish by flipping the track enabled value to `false`.
+Also possible on remote tracks.  
 
 ```javascript
 let isMuted = false;
