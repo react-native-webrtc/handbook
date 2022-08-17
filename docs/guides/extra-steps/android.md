@@ -1,11 +1,6 @@
----
-id: android
-title: Android 4.4+
----
+# Android 4.4+
 
 Starting with React Native 0.60 due to a new auto linking feature you no longer need to follow manual linking steps but you will need to follow the other steps below if you plan on releasing your app to production.  
-
-See a sample app in the `examples/GumTestApp` directory.  
 
 ## Declaring Permissions
 
@@ -16,7 +11,7 @@ In `android/app/main/AndroidManifest.xml` add the following permissions before t
 <uses-feature android:name="android.hardware.camera.autofocus" />
 <uses-feature android:name="android.hardware.audio.output" />
 <uses-feature android:name="android.hardware.microphone" />
-
+  
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -37,7 +32,7 @@ If you plan to also support Bluetooth devices then also add the following.
 
 In `android/app/build.gradle` add the following inside the `android` section.
 
-```gradle
+```
 compileOptions {
 	sourceCompatibility JavaVersion.VERSION_1_8
 	targetCompatibility JavaVersion.VERSION_1_8
@@ -48,7 +43,7 @@ compileOptions {
 
 In `android/app/proguard-rules.pro` add the following on a new line.
 
-```proguard
+```
 -keep class com.oney.WebRTCModule.** { *; }
 -keep class org.webrtc.** { *; }
 ```
@@ -72,7 +67,7 @@ A notification channel is also required and created.
 
 ```javascript
 import notifee, { AndroidImportance } from '@notifee/react-native';
-
+  
 try {
 	const channelId = await notifee.createChannel( {
 		id: 'screen_capture',
@@ -81,7 +76,7 @@ try {
 		vibration: false,
 		importance: AndroidImportance.DEFAULT
 	} );
-
+  
 	await notifee.displayNotification( {
 		title: 'Screen Capture',
 		body: 'This notification will be here until you stop capturing.',
@@ -112,7 +107,7 @@ Otherwise you'll receive errors relating to the foreground service not being reg
 ```javascript
 notifee.registerForegroundService( notification => {
 	return new Promise( () => {
-
+		// Handle Notification
 	} );
 } );
 ```

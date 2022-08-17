@@ -9,10 +9,15 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
+	- uses: actions/setup-node@v3
+	  with:
+        node-version: 16
+        cache: yarn
+	- run: yarn install --frozen-lockfile
 
     - name: Build
-      run: npm install && npm run build
+      run: yarn build
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3

@@ -1,4 +1,0 @@
----
-id: macos
-title: macOS
----

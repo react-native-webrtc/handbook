@@ -1,4 +1,0 @@
----
-id: expo
-title: Expo
----

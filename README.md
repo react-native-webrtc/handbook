@@ -1,10 +1,10 @@
 # The React-Native-WebRTC Handbook
 
-This is The React-Native-WebRTC Handbook.  
-It's powered by [Docusaurus](https://docusaurus.io/).  
+This is the React Native WebRTC Handbook.  
+It's powered by [VitePress](https://vitepress.vuejs.org/).  
 NOTE: Nodejs >= 16 is necessary.  
 
-## Building the site
+## Building the Site
 
 The site is built automatically with every push thanks to a [GH Actions](https://github.com/react-native-webrtc/handbook/blob/master/.github/workflows/gh-pages.yml).  
 If you want to build it locally, follow this simple step:  
