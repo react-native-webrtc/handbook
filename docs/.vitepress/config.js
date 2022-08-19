@@ -4,7 +4,8 @@ export default {
 	description: 'The WebRTC module for React Native',
 	outDir: '../build',
 	base: '/handbook/',
-	cleanUrls: 'with-subfolders',
+	ignoreDeadLinks: true,
+	cleanUrls: 'disabled',
 	head: [
 		[
 			'meta',
