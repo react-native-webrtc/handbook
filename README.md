@@ -12,7 +12,7 @@ Entirely depends on your preferred package manager.
 ```
 npm install && npm start
 yarn && yarn start
-pnpm && pnpm start
+pnpm install && pnpm start
 ```
 
 You can now edit the files in the `src` folder and the site should start to reflect any changes you make thanks to live reloading.

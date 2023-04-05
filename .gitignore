@@ -2,8 +2,8 @@
 /node_modules
 
 # Production
-.vitepress/.temp
-.vitepress/cache
+/.vitepress/.temp
+/.vitepress/cache
 /build
 
 # Generated files

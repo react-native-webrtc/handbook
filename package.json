@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "vitepress dev",
 		"build": "vitepress build",
-		"serve": "yarn build && vitepress serve"
+		"serve": "vitepress serve"
 	},
 	"devDependencies": {
 		"vitepress": "1.0.0-alpha.65",
