@@ -47,7 +47,15 @@ try {
 };
 ```
 
-## Step 2 - Create your peer, add the media stream
+## Step 2
+
+### Create the Peer
+
+### Setup the Events
+
+### Add the MediaStream
+
+Create your peer, add the media stream
 
 Now that we've got the media stream which consists of an audio and video track we can actually start getting the peer connection created and ready to connect. Once the media stream has been added to the peer then the `negotiationneeded` event will fire to indicate that you can now start creating an offer.  
 
@@ -134,6 +142,10 @@ We can't give any sample code for the signalling stages.
 But do intend to provide an example app along with signalling app in the near future.  
 
 ## Step 4 - Create an offer, set the local description
+
+### Create an Offer
+
+### Set the Local Description
 
 We've added the media stream to the peer connection and got most of the basic events hooked up.
 You can now start creating an offer which then needs sending off to the other call participant.  

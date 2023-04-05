@@ -1,21 +1,24 @@
 # The React-Native-WebRTC Handbook
 
-This is the React Native WebRTC Handbook.  
-It's powered by [VitePress](https://vitepress.vuejs.org/).  
-NOTE: Nodejs >= 16 is necessary.  
+Powered by [VitePress](https://vitepress.vuejs.org/).  
+`Nodejs >= 16 is necessary.`  
+Built automatically with every push thanks to [GH Actions](https://github.com/react-native-webrtc/handbook/blob/master/.github/workflows/gh-pages.yml).  
 
-## Building the Site
+## Want to build and run our handbook locally?
 
-The site is built automatically with every push thanks to a [GH Actions](https://github.com/react-native-webrtc/handbook/blob/master/.github/workflows/gh-pages.yml).  
-If you want to build it locally, follow this simple step:  
+Say no more. It's as simple as running one of the following lines.  
+Entirely depends on your preferred package manager.
 
-```js
+```
+npm install && npm start
 yarn && yarn start
+pnpm && pnpm start
 ```
 
-You can now edit the files in the `docs` folder and the site will reflect the changes immediately thanks to live reloading.
+You can now edit the files in the `src` folder and the site should start to reflect any changes you make thanks to live reloading.
 
-## Contributing
+## Would you like to lend a hand?
 
-We appreciate all contributions to this repository.  
-Please make a Pull Request, no matter how small, all contributions are valuable!  
+We appreciate all contributions within our organisation.  
+Please make a pull request, no matter how small, all contributions are valuable!  
+Every little helps.

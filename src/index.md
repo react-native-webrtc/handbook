@@ -20,10 +20,13 @@ hero:
       link: https://github.com/react-native-webrtc/react-native-webrtc
 
 features:
-  - title: Batteries Included
+  - icon: ⚡️
+    title: Batteries Included
     details: 
-  - title: Multiple Platforms
+  - icon: 🔥
+    title: Multiple Platforms
     details: 
-  - title: Stable and Standardized
+  - icon: 👍
+    title: Stable and Standardized
     details: 
 ---

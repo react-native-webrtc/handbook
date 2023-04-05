@@ -1,10 +1,10 @@
-# Android 4.4+
+# Android 6+
 
 Starting with React Native 0.60 due to a new auto linking feature you no longer need to follow manual linking steps but you will need to follow the other steps below if you plan on releasing your app to production.  
 
 ## Declaring Permissions
 
-In `android/app/main/AndroidManifest.xml` add the following permissions before the `<application>` section.
+In `android/app/src/main/AndroidManifest.xml` add the following permissions before the `<application>` section.
 That will define all of the permissions you might use.
 
 ```xml
