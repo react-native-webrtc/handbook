@@ -7,8 +7,9 @@ export default {
 	srcDir: 'src',
 	outDir: 'build',
 	base: baseDir,
-	cleanUrls: 'without-subfolders', // Doesn't seem to function correctly
+	cleanUrls: true,
 	appearance: 'dark',
+	lastUpdated: true,
 	head: [
 		[
 			'meta',
@@ -83,6 +84,9 @@ export default {
 		logo: '/logo.svg',
 		siteTitle: 'React Native WebRTC',
 		outline: 'deep',
+		search: {
+			provider: 'local'
+		},
 		nav: [
 			{
 				text: 'Guides',
@@ -101,10 +105,6 @@ export default {
 				link: 'https://react-native-webrtc.discourse.group'
 			}
 		],
-		editLink: {
-			pattern: 'https://github.com/react-native-webrtc/handbook/edit/master/docs/:path',
-			text: 'Suggest changes to this page'
-		},
 		socialLinks: [
 			{
 				icon: 'github',
@@ -207,6 +207,10 @@ export default {
 					]
 				}
 			]
+		},
+		editLink: {
+			pattern: 'https://github.com/react-native-webrtc/handbook/edit/master/src/:path',
+			text: 'Suggest changes to this page'
 		},
 		footer: {
 			message: 'Released under the Apache 2.0 License',
