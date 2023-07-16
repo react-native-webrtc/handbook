@@ -21,7 +21,7 @@ If you want to start the call as voice only then you can flip the boolean but th
 **Don't forget, you will be prompted to accept permissions for the camera and microphone.**  
 **Usually it is better to request permissions at an earlier stage to improve the user experience.**  
 
-```javascript
+```typescript
 let mediaConstraints = {
 	audio: true,
 	video: {
@@ -63,7 +63,7 @@ In some instances you might find that the `negotiationneeded` event can fire mul
 
 The `iceServers` below include one of Googles public STUN servers, you should also provide your own TURN server alongside a STUN server to ensure that connections can actually be established between callers.  
 
-```javascript
+```typescript
 let peerConstraints = {
 	iceServers: [
 		{
@@ -150,7 +150,7 @@ But do intend to provide an example app along with signalling app in the near fu
 We've added the media stream to the peer connection and got most of the basic events hooked up.
 You can now start creating an offer which then needs sending off to the other call participant.  
 
-```javascript
+```typescript
 let sessionConstraints = {
 	mandatory: {
 		OfferToReceiveAudio: true,
@@ -180,7 +180,7 @@ An easy solution is to hold onto some of the candidates and process them immedia
 
 We will process any leftover candidates in the next step.  
 
-```javascript
+```typescript
 let remoteCandidates = [];
   
 function handleRemoteCandidate( iceCandidate ) {
@@ -209,7 +209,7 @@ Set the offer as the remote description, create an answer and set the local desc
 You can now process any candidates if any got caught in-between the handshake process.  
 Lastly you need to send the answer back to the caller who gave the offer.  
 
-```javascript
+```typescript
 try {
 	// Use the received offerDescription
 	const offerDescription = new RTCSessionDescription( offerDescription );
@@ -235,7 +235,7 @@ Then the waiting game begins and the connection is a success or a failure.
 Hopefully the whole process wasn't too complex to understand.  
 But it definitely can get more complex when involving more participants.  
 
-```javascript
+```typescript
 try {
 	// Use the received answerDescription
 	const answerDescription = new RTCSessionDescription( answerDescription );

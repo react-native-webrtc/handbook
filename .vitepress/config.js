@@ -141,7 +141,7 @@ export default {
 					collapsible: true,
 					items: [
 						{
-							text: 'Android 6+',
+							text: 'Android 7+',
 							link: '/guides/extra-steps/android'
 						},
 						{

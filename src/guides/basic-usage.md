@@ -6,7 +6,7 @@ Most of the included functionality is similar to how you would deal with WebRTC 
   
 If you see functions that are listed in the document above but not listed below then they are likely not supported by this module yet and will most likely be supported in the near future, we're open to contributions.
 
-```javascript
+```typescript
 import {
 	RTCIceCandidate,
 	RTCPeerConnection,
@@ -31,7 +31,7 @@ Some devices might not have more than 1 camera. The following will allow you to 
   
 You can of-course use `enumerateDevices` to list other media device information too.  
 
-```javascript
+```typescript
 let cameraCount = 0;
   
 try {
@@ -52,7 +52,7 @@ try {
 By default we're sending both audio and video.  
 This will allow us to toggle the video stream during a call.  
 
-```javascript
+```typescript
 let mediaConstraints = {
 	audio: true,
 	video: {
@@ -71,7 +71,7 @@ Fill me in.
 If you only want a voice call then you can flip `isVoiceOnly` over to `true`.  
 You can then cycle and enable or disable the video tracks on demand during a call.  
 
-```javascript
+```typescript
 let localMediaStream;
 let isVoiceOnly = false;
   
@@ -95,7 +95,7 @@ This will allow capturing the device screen, requests permission on execution.
 Make sure to follow [these](/guides/extra-steps/android#screen-capture-support-android-10) extra steps for Android and [these](/guides/extra-steps/ios#screen-capture-support) for iOS.  
 Otherwise you'll experience blank streams.
 
-```javascript
+```typescript
 try {
 	const mediaStream = await mediaDevices.getDisplayMedia();
   
@@ -110,7 +110,7 @@ try {
 Cycling all of the tracks and stopping them is more than enough to clean up after a call has finished.
 You won't usually need to do this for remote tracks, only local.  
 
-```javascript
+```typescript
 localMediaStream.getTracks().map(
 	track => track.stop()
 );
@@ -123,7 +123,7 @@ localMediaStream = null;
 We're only specifying a STUN server but you should also be using a TURN server.  
 Check [this guide](/guides/improving-call-reliability) if you'd like some advice on how to improve call reliability.
 
-```javascript
+```typescript
 let peerConstraints = {
 	iceServers: [
 		{
@@ -138,7 +138,7 @@ let peerConstraints = {
 Here we're creating a peer connection required to create a call.  
 You can also overwrite hook functions instead of using event listeners.  
 
-```javascript
+```typescript
 let peerConnection = new RTCPeerConnection( peerConstraints );
 peerConnection.addEventListener( 'connectionstatechange', event => {} );
 peerConnection.addEventListener( 'icecandidate', event => {} );
@@ -156,7 +156,7 @@ peerConnection.addEventListener( 'removestream', event => {} );
 When ending a call you should always make sure to dispose of everything ready for another call.
 The following should dispose of everything.  
 
-```javascript
+```typescript
 peerConnection._unregisterEvents();
 peerConnection.close();
 peerConnection = null;
@@ -167,7 +167,7 @@ peerConnection = null;
 After using one of the media functions above you can then add the media stream to the peer.
 The negotiation needed event will be triggered on the peer afterwords.  
 
-```javascript
+```typescript
 peerConnection.addStream( localMediaStream );
 ```
 
@@ -176,7 +176,7 @@ peerConnection.addStream( localMediaStream );
 Usually the call initialiser would create the data channel but it can be done on both sides.  
 The negotiation needed event will be triggered on the peer connection afterwords.  
 
-```javascript
+```typescript
 let datachannel = peerConnection.createDataChannel( 'my_channel' );
 datachannel.addEventListener( 'open', event => {} );
 datachannel.addEventListener( 'close', event => {} );
@@ -188,7 +188,7 @@ datachannel.addEventListener( 'message', message => {} );
 The following event is for the second client, not the client which created the data channel.  
 Unless of-course you want both sides to create separate data channels.  
 
-```javascript
+```typescript
 peerConnection.addEventListener( 'datachannel', event => {
 	let datachannel = event.channel;
   
@@ -203,7 +203,7 @@ You can send a range of different data types over data channels, but for this ex
   
 Bare in mind there are limits so sending large amounts of data isn't usually advised.  
 
-```javascript
+```typescript
 datachannel.send( 'Hey There!' );
 ```
 
@@ -213,7 +213,7 @@ When the peer connection is destroyed everything attached should also be destroy
   
 But as good practice, you can always make sure they are closed.  
 
-```javascript
+```typescript
 datachannel.close();
 datachannel = null;
 ```
@@ -224,7 +224,7 @@ As mentioned above we're going for the approach of offering both video and voice
   
 That will allow you to enable and disable video streams while a call is active.  
 
-```javascript
+```typescript
 let sessionConstraints = {
 	mandatory: {
 		OfferToReceiveAudio: true,
@@ -241,7 +241,7 @@ Typically inside the `negotiationneeded` event.
   
 ICE Candidate creation and gathering will start as soon as an offer has been created.  
 
-```javascript
+```typescript
 try {
 	const offerDescription = await peerConnection.createOffer( sessionConstraints );
 	await peerConnection.setLocalDescription( offerDescription );
@@ -257,7 +257,7 @@ try {
 All parties will need to ensure they are handling ICE Candidates correctly.  
 Otherwise the offer and answer handshake stages will go a little wonky.  
 
-```javascript
+```typescript
 try {
 	// Use the received offerDescription
 	const offerDescription = new RTCSessionDescription( offerDescription );
@@ -278,7 +278,7 @@ During an active call you might want to mute your microphone.
 Easy to accomplish by flipping the track enabled value to `false`.
 Also possible on remote tracks.  
 
-```javascript
+```typescript
 let isMuted = false;
   
 try {
@@ -296,7 +296,7 @@ try {
 Naturally we assume you'll be using the front camera by default when starting a call.  
 So we set `isFrontCam` as `true` and let the value flip on execution.  
 
-```javascript
+```typescript
 let isFrontCam = true;
   
 try {
@@ -317,7 +317,7 @@ try {
 Once you've gained a local and/or remote stream then rendering it is as follows.  
 Don't forget, the user facing camera is usually mirrored.  
 
-```javascript
+```typescript
 <RTCView
 	mirror={true}
 	objectFit={'cover'}

@@ -3,29 +3,27 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-	--primary: #ed8a80;                /* congo pink */
-	--primary-content: #3C3C3B;        /* charcoal */
-	--neutral: #27464F;                /* midnight green */
-	--neutral-content: #EDEDED;        /* cloud */
-	--secondary: #EDEDED;              /* charcoal */
-	--secondary-content: #3C3C3B;      /* cloud */
-	--accent: #3C3C3B;                 /* charcoal */
-	--accent-content: #EDEDED;         /* cloud */
+/*
+	--primary: #ed8a80;
+	--primary-content: #3C3C3B;
+	--neutral: #27464F;
+	--neutral-content: #EDEDED;
+	--secondary: #EDEDED;
+	--secondary-content: #3C3C3B;
+	--accent: #3C3C3B;
+	--accent-content: #EDEDED;
 	--btn-focus-scale: 1.05;
 
 	--vp-c-accent: rgb(218, 180, 11);
 
-/*
 	--vp-c-brand: var(--primary);
 	--vp-c-brand-light: #FFA69D;
 	--vp-c-brand-lighter: #FA978D;
 	--vp-c-brand-dark: #e47f75;
 	--vp-c-brand-darker: #db6d62;
-*/
 
 	--vp-code-block-bg: rgba(125, 125, 125, 0.04);
 
-/*
 	--vp-c-green-light: rgb(18, 181, 157);
 	--vp-custom-block-tip-border: rgba(18, 181, 157, 0.5);
 	--vp-custom-block-tip-bg: rgba(18, 181, 157, 0.1);

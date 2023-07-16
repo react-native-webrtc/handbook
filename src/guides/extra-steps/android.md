@@ -1,4 +1,4 @@
-# Android 6+
+# Android 7+
 
 Starting with React Native 0.60 due to a new auto linking feature you no longer need to follow manual linking steps but you will need to follow the other steps below if you plan on releasing your app to production.  
 
@@ -68,7 +68,7 @@ You will be prompted for permissions automatically each time you want to start s
   
 A notification channel is also required and created.  
 
-```javascript
+```typescript
 import notifee, { AndroidImportance } from '@notifee/react-native';
   
 try {
@@ -97,7 +97,7 @@ Once screen capturing has finished you should then stop the foreground service.
 Usually you'd run a notification cancellation function but as there is a service involved.
 Instead you should run the following to get the job done.
 
-```javascript
+```typescript
 try {
 	await notifee.stopForegroundService();
 } catch( err ) {
@@ -108,7 +108,7 @@ try {
 Lastly you need to add this to your projects main `index.js` file.  
 Otherwise you will receive an error relating to the service not being registered.
 
-```javascript
+```typescript
 notifee.registerForegroundService( notification => {
 	return new Promise( () => {
 		// Handle Notification
