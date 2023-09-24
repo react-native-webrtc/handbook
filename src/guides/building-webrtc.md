@@ -12,8 +12,8 @@ Simply run the following to clone the latest version of our modules repository.
 git clone https://github.com/react-native-webrtc/react-native-webrtc.git
 ```
 
-Or you can click [here](https://github.com/react-native-webrtc/react-native-webrtc/archive/refs/heads/master.zip) to download a compressed version.  
-Bare in mind you will have to extract it to continue.  
+Or download a compressed archive from [here](https://github.com/react-native-webrtc/react-native-webrtc/archive/refs/heads/master.zip).  
+Then you can get everything extracted and you'll be ready to move onto the next steps.  
 
 ## Preparing
 
@@ -32,7 +32,7 @@ python build-webrtc.py --setup --ios ~/src/
 ### Android
 
 :::warning Make sure you have the Java JDK package installed.
-Simply install the the `default-jdk-headless` package if you're using a `Debian` based distribution of Linux,
+Simply install the `default-jdk-headless` package if you're using a `Debian` based distribution of Linux,
 some other distributions might also use the same package name.
 :::
 

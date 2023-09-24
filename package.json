@@ -1,12 +1,15 @@
 {
 	"license": "Apache-2.0",
-	"devDependencies": {
-		"vitepress": "1.0.0-alpha.8",
-		"vue": "^3.2.37"
+	"engines": {
+		"node": ">= 18"
 	},
 	"scripts": {
-		"start": "vitepress dev docs",
-		"build": "vitepress build docs",
-		"serve": "yarn build && vitepress serve docs"
+		"start": "vitepress dev",
+		"build": "vitepress build",
+		"serve": "vitepress serve"
+	},
+	"devDependencies": {
+		"vitepress": "1.0.0-rc.17",
+		"vue": "^3.3.4"
 	}
 }

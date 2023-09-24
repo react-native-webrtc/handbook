@@ -21,7 +21,7 @@ If you want to start the call as voice only then you can flip the boolean but th
 **Don't forget, you will be prompted to accept permissions for the camera and microphone.**  
 **Usually it is better to request permissions at an earlier stage to improve the user experience.**  
 
-```javascript
+```typescript
 let mediaConstraints = {
 	audio: true,
 	video: {
@@ -31,6 +31,7 @@ let mediaConstraints = {
 };
   
 let localMediaStream;
+let remoteMediaStream;
 let isVoiceOnly = false;
   
 try {
@@ -47,7 +48,15 @@ try {
 };
 ```
 
-## Step 2 - Create your peer, add the media stream
+## Step 2
+
+### Create the Peer
+
+### Setup the Events
+
+### Add the MediaStream
+
+Create your peer, add the media stream
 
 Now that we've got the media stream which consists of an audio and video track we can actually start getting the peer connection created and ready to connect. Once the media stream has been added to the peer then the `negotiationneeded` event will fire to indicate that you can now start creating an offer.  
 
@@ -55,7 +64,7 @@ In some instances you might find that the `negotiationneeded` event can fire mul
 
 The `iceServers` below include one of Googles public STUN servers, you should also provide your own TURN server alongside a STUN server to ensure that connections can actually be established between callers.  
 
-```javascript
+```typescript
 let peerConstraints = {
 	iceServers: [
 		{
@@ -113,14 +122,17 @@ peerConnection.addEventListener( 'signalingstatechange', event => {
 			break;
 	};
 } );
-  
-peerConnection.addEventListener( 'addstream', event => {
-	// Grab the remote stream from the connected participant.
-	remoteMediaStream = event.stream;
+
+peerConnection.addEventListener( 'track', event => {
+	// Grab the remote track from the connected participant.
+	remoteMediaStream = remoteMediaStream || new MediaStream();
+	remoteMediaStream.addTrack( event.track, remoteMediaStream );
 } );
   
 // Add our stream to the peer connection.
-peerConnection.addStream( localMediaStream );
+localMediaStream.getTracks().forEach( 
+	track => peerConnection.addTrack( track, localMediaStream );
+);
 ```
 
 ## Step 3 - Signal that you're starting a call
@@ -135,10 +147,14 @@ But do intend to provide an example app along with signalling app in the near fu
 
 ## Step 4 - Create an offer, set the local description
 
+### Create an Offer
+
+### Set the Local Description
+
 We've added the media stream to the peer connection and got most of the basic events hooked up.
 You can now start creating an offer which then needs sending off to the other call participant.  
 
-```javascript
+```typescript
 let sessionConstraints = {
 	mandatory: {
 		OfferToReceiveAudio: true,
@@ -168,7 +184,7 @@ An easy solution is to hold onto some of the candidates and process them immedia
 
 We will process any leftover candidates in the next step.  
 
-```javascript
+```typescript
 let remoteCandidates = [];
   
 function handleRemoteCandidate( iceCandidate ) {
@@ -197,13 +213,13 @@ Set the offer as the remote description, create an answer and set the local desc
 You can now process any candidates if any got caught in-between the handshake process.  
 Lastly you need to send the answer back to the caller who gave the offer.  
 
-```javascript
+```typescript
 try {
 	// Use the received offerDescription
 	const offerDescription = new RTCSessionDescription( offerDescription );
 	await peerConnection.setRemoteDescription( offerDescription );
   
-	const answerDescription = await peerConnection.createAnswer( sessionConstraints );
+	const answerDescription = await peerConnection.createAnswer();
 	await peerConnection.setLocalDescription( answerDescription );
   
 	// Here is a good place to process candidates.
@@ -223,7 +239,7 @@ Then the waiting game begins and the connection is a success or a failure.
 Hopefully the whole process wasn't too complex to understand.  
 But it definitely can get more complex when involving more participants.  
 
-```javascript
+```typescript
 try {
 	// Use the received answerDescription
 	const answerDescription = new RTCSessionDescription( answerDescription );

@@ -1,4 +1,4 @@
-# iOS 11+
+# iOS 12+
 
 Starting with React Native 0.60 due to a new auto linking feature you no longer need to follow manual linking steps but you will need to follow the other steps below if you plan on releasing your app to production.  
 
@@ -9,11 +9,11 @@ Otherwise you will experience problems.
 :::
 
 You may have to change the `platform` field in your podfile.  
-`react-native-webrtc` doesn't support iOS < 11  
-Set it to `11.0` or above otherwise you'll receive an error when running `pod install`.
+`react-native-webrtc` doesn't support iOS < 12  
+Set it to `12.0` or above otherwise you'll receive an error when running `pod install`.
 
 ```
-platform :ios, '11.0'
+platform :ios, '12.0'
 ```
 
 ## Declaring Permissions

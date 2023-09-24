@@ -2,6 +2,8 @@
 /node_modules
 
 # Production
+/.vitepress/.temp
+/.vitepress/cache
 /build
 
 # Generated files
@@ -20,3 +22,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
