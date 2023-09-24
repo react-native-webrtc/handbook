@@ -10,6 +10,9 @@ export default {
 	cleanUrls: true,
 	appearance: 'dark',
 	lastUpdated: true,
+	sitemap: {
+		hostname: 'https://react-native-webrtc.github.io/handbook'
+	},
 	head: [
 		[
 			'meta',
@@ -74,12 +77,6 @@ export default {
 		]
 	*/
 	],
-	markdown: {
-		theme: {
-			light: 'vitesse-light',
-			dark: 'vitesse-dark'
-		}
-	},
 	themeConfig: {
 		logo: '/logo.svg',
 		siteTitle: 'React Native WebRTC',
@@ -149,20 +146,28 @@ export default {
 							link: '/guides/extra-steps/ios'
 						},
 						{
-							text: 'macOS 10.13+',
-							link: '/guides/extra-steps/macos'
-						},
-						{
-							text: 'Windows 10+',
-							link: '/guides/extra-steps/windows'
+							text: 'Expo 45+',
+							link: '/guides/extra-steps/expo'
 						},
 						{
 							text: 'React Native Web',
 							link: '/guides/extra-steps/react-native-web'
 						},
 						{
-							text: 'Expo 45+',
-							link: '/guides/extra-steps/expo'
+							text: 'macOS 10.13+',
+							link: '/guides/extra-steps/macos'
+						},
+						{
+							text: 'macOS Catalyst',
+							link: '/guides/extra-steps/macos-catalyst'
+						},
+						{
+							text: 'tvOS / Android TV',
+							link: '/guides/extra-steps/tv'
+						},
+						{
+							text: 'Windows 10+',
+							link: '/guides/extra-steps/windows'
 						}
 					]
 				},

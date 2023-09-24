@@ -1,13 +1,17 @@
 # Supported Features
 
-| Feature | Android | iOS | macOS* | Windows* | Web* | Expo* |
-| :------- | :-------: | :---: | :-----: | :-------: | :------: | :----: |
-| Audio/Video | :heavy_check_mark: | :heavy_check_mark: | - | - | :heavy_check_mark: | :heavy_check_mark: |
-| Data Channels | :heavy_check_mark: | :heavy_check_mark: | - | - | :heavy_check_mark: | :heavy_check_mark: |
-| Screen Capture* | :heavy_check_mark: | :heavy_check_mark: | - | - | :heavy_check_mark: | :heavy_check_mark: |
-| Plan B | - | - | - | - | - | - |
-| Unified Plan* | :heavy_check_mark: | :heavy_check_mark: | - | - | :heavy_check_mark: | :heavy_check_mark: |
-| Simulcast* | :heavy_check_mark: | :heavy_check_mark: | - | - | :heavy_check_mark: | :heavy_check_mark: |
+|  | Android | iOS | tvOS | macOS* | Windows* | Web* | Expo* |
+| :- | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Audio/Video | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | - | - | :heavy_check_mark: | :heavy_check_mark: |
+| Data Channels | :heavy_check_mark: | :heavy_check_mark: | - | - | - | :heavy_check_mark: | :heavy_check_mark: |
+| Screen Capture | :heavy_check_mark: | :heavy_check_mark: | - | - | - | :heavy_check_mark: | :heavy_check_mark: |
+| Plan B | - | - | - | - | - | - | - |
+| Unified Plan* | :heavy_check_mark: | :heavy_check_mark: | - | - | - | :heavy_check_mark: | :heavy_check_mark: |
+| Simulcast* | :heavy_check_mark: | :heavy_check_mark: | - | - | - | :heavy_check_mark: | :heavy_check_mark: |
+
+## TODO
+Instead of this write something, highlight the vast supported features on what platforms and also the unsupported stuff.
+##
 
 :::warning Screen Capturing requires extra setup.
 Make sure to follow the extra steps for Android and iOS or you will get blank streams.

@@ -1,7 +1,7 @@
 # The React-Native-WebRTC Handbook
 
 Powered by [VitePress](https://vitepress.vuejs.org/).  
-`Nodejs >= 16 is necessary.`  
+`Nodejs >= 18 is necessary.`  
 Built automatically with every push thanks to [GH Actions](https://github.com/react-native-webrtc/handbook/blob/master/.github/workflows/gh-pages.yml).  
 
 ## Want to build and run our handbook?

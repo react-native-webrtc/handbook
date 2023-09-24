@@ -111,7 +111,7 @@ Cycling all of the tracks and stopping them is more than enough to clean up afte
 You won't usually need to do this for remote tracks, only local.  
 
 ```typescript
-localMediaStream.getTracks().map(
+localMediaStream.getTracks().forEach(
 	track => track.stop()
 );
   
@@ -147,8 +147,7 @@ peerConnection.addEventListener( 'iceconnectionstatechange', event => {} );
 peerConnection.addEventListener( 'icegatheringstatechange', event => {} );
 peerConnection.addEventListener( 'negotiationneeded', event => {} );
 peerConnection.addEventListener( 'signalingstatechange', event => {} );
-peerConnection.addEventListener( 'addstream', event => {} );
-peerConnection.addEventListener( 'removestream', event => {} );
+peerConnection.addEventListener( 'track', event => {} );
 ```
 
 ## Destroying the Peer Connection
@@ -168,7 +167,9 @@ After using one of the media functions above you can then add the media stream t
 The negotiation needed event will be triggered on the peer afterwords.  
 
 ```typescript
-peerConnection.addStream( localMediaStream );
+localMediaStream.getTracks().forEach( 
+	track => peerConnection.addTrack( track, localMediaStream );
+);
 ```
 
 ## Creating a Data Channel
@@ -263,7 +264,7 @@ try {
 	const offerDescription = new RTCSessionDescription( offerDescription );
 	await peerConnection.setRemoteDescription( offerDescription );
   
-	const answerDescription = await peerConnection.createAnswer( sessionConstraints );
+	const answerDescription = await peerConnection.createAnswer();
 	await peerConnection.setLocalDescription( answerDescription );
   
 	// Send the answerDescription back as a response to the offerDescription.
@@ -310,6 +311,17 @@ try {
 } catch( err ) {
 	// Handle Error
 };
+```
+
+## Controlling the Remote Audio Volume
+
+Remote audio tracks are automatically handled and played through your audio output.  
+The volume of individual tracks can be set with the `_setVolume` function.  
+It takes in a number between 0 to 10, defaults to 1.
+
+```typescript
+const audioTrack = remoteMediaStream.getAudioTracks()[ 0 ];
+audioTrack._setVolume( 0.5 );
 ```
 
 ## Rendering the Media Stream
